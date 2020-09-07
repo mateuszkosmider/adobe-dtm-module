@@ -1,0 +1,1 @@
+export { AdobeTagManager } from './AdobeTagManager'
