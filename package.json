@@ -6,8 +6,9 @@
   "types": "./lib/index.d.ts",
   "scripts": {
     "build": "tsc",
+    "clean": "shx rm -rf lib/*",
     "watch": "tsc --watch",
-    "prepare": "yarn run build",
+    "prepare": "yarn clean && yarn build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -32,6 +33,7 @@
     "typescript": "4.0.2"
   },
   "devDependencies": {
-    "prettier": "2.1.1"
+    "prettier": "2.1.1",
+    "shx": "0.3.2"
   }
 }
