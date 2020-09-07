@@ -11,5 +11,5 @@ export const Snippets: ISnippet = {
 
   digitalData: function (digitalData, digitalDataName) {
     return `var ${digitalDataName} = ${JSON.stringify(digitalData)}`
-  }
-}  
+  },
+}

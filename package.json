@@ -14,17 +14,24 @@
     "type": "git",
     "url": "git+https://github.com/mateuszkosmider/adobe-dtm-module.git"
   },
-  "keywords": ["Adobe", "DTM", "analytics"],
+  "keywords": [
+    "Adobe",
+    "DTM",
+    "analytics"
+  ],
   "author": "MK",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/mateuszkosmider/adobe-dtm-module/issues"
   },
   "homepage": "https://github.com/mateuszkosmider/adobe-dtm-module#readme",
+  "files": [
+    "lib/**/*"
+  ],
   "dependencies": {
     "typescript": "4.0.2"
   },
-  "files": [
-    "lib/**/*"
-  ]
+  "devDependencies": {
+    "prettier": "2.1.1"
+  }
 }

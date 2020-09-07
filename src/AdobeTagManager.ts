@@ -16,7 +16,7 @@ export const AdobeTagManager: IManager = {
 
     return {
       script,
-      dataScript
+      dataScript,
     }
   },
 
@@ -24,10 +24,10 @@ export const AdobeTagManager: IManager = {
     const dtm = this.dtm({
       trackerUrl,
       digitalData: digitalData || undefined,
-      digitalDataName
+      digitalDataName,
     })
 
     document.head.insertBefore(dtm.script, document.head.childNodes[0])
     if (digitalData) document.head.insertBefore(dtm.dataScript, document.head.childNodes[0])
-  }
+  },
 }
