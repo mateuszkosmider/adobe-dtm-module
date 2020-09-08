@@ -1,7 +1,7 @@
 # adobe-dtm-module
 ### Adobe Dynamic Tag Management
 
-This is a Javascript module that implement Adobe Dynamic Tag Management. It is designed to use [AdobeDTM](https://docs.adobe.com/content/help/en/dtm/using/dtm-home.html) snippet.
+This is a Typescript module that implement Adobe Dynamic Tag Management. It is designed to use [AdobeDTM](https://docs.adobe.com/content/help/en/dtm/using/dtm-home.html) snippet.
 
 ## Installation
 
