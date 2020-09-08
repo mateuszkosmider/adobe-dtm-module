@@ -1,33 +1,21 @@
 import { Snippets } from './Snippet'
-import { IManager } from './types'
+import { IData } from './types'
 
-export const AdobeTagManager: IManager = {
-  insertDataScript: function (digitalData) {
-    const script = document.createElement('script')
-    script.innerHTML = digitalData
-    return script
-  },
+const insertDataScript = (digitalData: string) => {
+  const script = document.createElement('script')
+  script.innerHTML = digitalData
+  return script
+}
 
-  dtm: function ({ trackerUrl, digitalData, digitalDataName }) {
-    const script = Snippets.script(trackerUrl)
-    // @ts-ignore
-    const data = Snippets.digitalData(digitalData, digitalDataName)
-    const dataScript = this.insertDataScript(data)
+const initialize = ({ trackerUrl, digitalData, digitalDataName = 'digitalData' }: IData) => {
+  const script = Snippets.script(trackerUrl)
+  const data = Snippets.digitalData(digitalData, digitalDataName)
+  const dataScript = insertDataScript(data)
 
-    return {
-      script,
-      dataScript,
-    }
-  },
+  document.head.insertBefore(script, document.head.childNodes[0])
+  if (digitalData) document.head.insertBefore(dataScript, document.head.childNodes[0])
+}
 
-  initialize: function ({ trackerUrl, digitalData, digitalDataName = 'digitalData' }) {
-    const dtm = this.dtm({
-      trackerUrl,
-      digitalData: digitalData || undefined,
-      digitalDataName,
-    })
-
-    document.head.insertBefore(dtm.script, document.head.childNodes[0])
-    if (digitalData) document.head.insertBefore(dtm.dataScript, document.head.childNodes[0])
-  },
+export const AdobeTagManager = {
+  initialize,
 }
